@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ivory: #FAF6EE;
+  --color-sand: #EFE6D6;
+  --color-cypress: #2F3E2E;
+  --color-cypress-dark: #222e22;
+  --color-cypress-light: #3e523c;
+  --color-terracotta: #B5654A;
+  --color-terracotta-dark: #984f37;
+  --color-gold: #B8975A;
+  --color-gold-light: #cfb27b;
+  --color-gold-dark: #9d7d42;
+  --color-charcoal: #1F1D1A;
+  --color-stone-soft: #8A8378;
+  --color-stone-light: #E7E2D8;
+
+  --font-serif: var(--font-cormorant), Cormorant Garamond, "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-manrope), Manrope, Inter, system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FAF6EE;
+  --foreground: #1F1D1A;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfb27b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8975A;
+}
+
+/* Luxury Italian Arched Masks */
+.arch-mask {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.arch-mask-lg {
+  border-radius: 120px 120px 16px 16px;
+}
+
+/* Subtle luxury grain / texture */
+.luxury-shadow {
+  box-shadow: 0 10px 30px -10px rgba(47, 62, 46, 0.08);
+}
+
+.luxury-card-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.luxury-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(47, 62, 46, 0.12);
 }
