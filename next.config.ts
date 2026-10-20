@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: "/media/fahad/Storage1/react_application/villa_demo",
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],
